@@ -158,9 +158,9 @@ class MemoryGame {
     }
     
     setupPromoCodeCopy() {
-        // Ждем, пока промокод будет создан
+        // Ждем, пока промокоды будут созданы
         setTimeout(() => {
-            const promoCode = document.getElementById('promo-code');
+            const promoCodes = document.querySelectorAll('.promo-code');
             const notification = document.getElementById('copy-notification');
             
             function fallbackCopyTextToClipboard(text) {
@@ -179,7 +179,8 @@ class MemoryGame {
                 return success;
             }
             
-            if (promoCode) {
+            // Добавляем обработчики ко всем промокодам
+            promoCodes.forEach(promoCode => {
                 promoCode.addEventListener('click', () => {
                     const textToCopy = promoCode.textContent;
                     
@@ -222,7 +223,7 @@ class MemoryGame {
                             }
                         });
                 });
-            }
+            });
         }, 100);
     }
     

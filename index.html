@@ -98,7 +98,7 @@
             // Заполняем сообщение о победе
             const winMessage = document.getElementById('win-message');
             const finalMessage = config.game.winMessage.replaceAll('{PROMO_CODE}', 
-                `<span id="promo-code" class="promo-code">${config.game.promoCode}</span>`);
+                `<span class="promo-code">${config.game.promoCode}</span>`);
             
             winMessage.innerHTML = `
                 ${finalMessage}
